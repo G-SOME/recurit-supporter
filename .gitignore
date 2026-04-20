@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.log
+.DS_Store
+Thumbs.db
+
+# Local runtime data
+/data/resumes_raw/*
+/data/resumes_parsed/*
+/data/vectors/*
+/data/logs/*
+
+# Keep folder structure
+!/data/resumes_raw/.gitkeep
+!/data/resumes_parsed/.gitkeep
+!/data/vectors/.gitkeep
+!/data/logs/.gitkeep
