@@ -260,6 +260,15 @@ with tab3:
             ])
             st.dataframe(result_df, use_container_width=True)
 
+            export_title = (fetch_job_profile(st.session_state['selected_job_id'])['title'] if st.session_state['selected_job_id'] else 'match_results').replace(' ', '_')
+            csv_bytes = result_df.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+            st.download_button(
+                'CSV 다운로드',
+                data=csv_bytes,
+                file_name=f'{export_title}_match_results.csv',
+                mime='text/csv',
+            )
+
             candidate_options = {f"{row['candidate_name']} | {row['file_name']}": row['candidate_resume_id'] for row in filtered_rows}
             if candidate_options:
                 detail_label = st.selectbox('상세보기 후보 선택', ['선택하세요'] + list(candidate_options.keys()))
