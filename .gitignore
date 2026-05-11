@@ -6,14 +6,13 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Local runtime data
-/data/resumes_raw/*
-/data/resumes_parsed/*
-/data/vectors/*
-/data/logs/*
+# Streamlit / local runtime
+.streamlit/
 
-# Keep folder structure
-!/data/resumes_raw/.gitkeep
-!/data/resumes_parsed/.gitkeep
-!/data/vectors/.gitkeep
-!/data/logs/.gitkeep
+# Local database and generated runtime data
+/data/app.db
+/data/*.db
+
+# OS / editor
+.vscode/
+.idea/
